@@ -52,7 +52,7 @@ low: Math.max(1, parseInt(threshLow.value, 10) || 50),
 high: Math.max(1, parseInt(threshHigh.value, 10) || 500),
 };
 chrome.storage.local.set({ beanThresholds: t });
-if  (canInject) chrome.tabs.sendMessage(tab.id, { type: 'BEAN_RATE_THRESHOLDS', thresholds: t });
+if (canInject) chrome.tabs.sendMessage(tab.id, { type: 'BEAN_RATE_THRESHOLDS', thresholds: t });
 }
 
 threshLow.addEventListener('change', saveThresholds);

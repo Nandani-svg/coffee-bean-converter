@@ -59,24 +59,24 @@ PRICE_REGEX.lastIndex = 0;
 if (!PRICE_REGEX.test(text)) return;
 PRICE_REGEX.lastIndex = 0;
 
-const fraq = document.createDocumentFragment();
+const frag = document.createDocumentFragment();
 let lastIndex = 0;
 let match;
 
 while ((match = PRICE_REGEX.exec(text)) !== null) {
 const [full, symbolRaw, numStr] = match;
-if (match.index > lastIndex) fraq.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
-fraq.appendChild(document.createTextNode(full));
-fraq.appendChild(makeBeanSpan(toBeans(parseFloat(numStr.replace(/,/g, '')), parseCurrency(symbolRaw))));
+if (match.index > lastIndex) frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+frag.appendChild(document.createTextNode(full));
+frag.appendChild(makeBeanSpan(toBeans(parseFloat(numStr.replace(/,/g, '')), parseCurrency(symbolRaw))));
 lastIndex = match.index + full.length;
 }
 
-if (lastIndex < text.length) fraq.appendChild(document.createTextNode(text.slice(lastIndex)));
+if (lastIndex < text.length) frag.appendChild(document.createTextNode(text.slice(lastIndex)));
 
 const wrapper = document.createElement('span');
 wrapper.setAttribute(PROCESSED_ATTR, '1');
 wrapper.setAttribute(WRAPPER_ATTR, text);
-wrapper.appendChild(fraq);
+wrapper.appendChild(frag);
 	if (!textNode.parentNode) return;
 	textNode.parentNode.replaceChild(wrapper, textNode);
 }
