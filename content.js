@@ -77,7 +77,8 @@ const wrapper = document.createElement('span');
 wrapper.setAttribute(PROCESSED_ATTR, '1');
 wrapper.setAttribute(WRAPPER_ATTR, text);
 wrapper.appendChild(fraq);
-textNode.parentNode.replaceChild(wrapper, textNode);
+	if (!textNode.parentNode) return;
+	textNode.parentNode.replaceChild(wrapper, textNode);
 }
 
 function processTextNodes(node) {
