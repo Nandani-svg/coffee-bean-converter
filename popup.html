@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Bean Rate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap%22%20rel=%22stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="panel">
+
+<header class="panel">
+<span class="wordmark">Bean Rate</span>
+<span class="built-on">$1 = 1 bean</span>
+</header>
+
+<div class="rule"></div>
+
+<section class="section rate-selection">
+<span class="section-label">exchange rate</span>
+<div class="rate-row">
+<span class="mono-lg">$1.00</span>
+<span class="rate-arrow">→</span>
+<span class="mono-lg accent">1 bean</span>
+</div>
+</section>
+
+<div class="rule"></div>
+
+<section class="section site-section">
+<div class="site-left">
+<span class="section-label">active on</span>
+<span class="hostname" id="site-hostname">—</span>
+</div>
+<label class="toggle" aria-label="Toggle Bean Rate on this site">
+<input type="checkbox" id="site-toggle" checked />
+<span class="track"></span class="thumb"></span></span>
+</label>
+</section>
+
+<div class="rule"></div>
+
+<section class="section">
+<span class="section-label">rates</span>
+<ul class="currency-list">
+<li>
+<svg class="bean" width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><ellipse cx="4" cy="4" rx="3" ry="2" fill="#C97A3D" transform="rotate(-30 4 4)"/><path d="M2.2 4 Q4 2.5 5.8 4" stroke="#1C1512" stroke-width="0.7" fill="none" stroke-linecap="round"/></svg>
+<span  class="c-code">USD</span><span class="c-rate">base</span>
+</li>
+<li>
+<svg class="bean" width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><ellipse cx="4" cy="4" rx="3" ry="2" fill="#C97A3D" transform="rotate(-30 4 4)"/><path d="M2.2 4 Q4 2.5 5.8 4" stroke="#1C1512" stroke-width="0.7" fill="none" stroke-linecap="round"/></svg>
+<span class="c-code">EUR</span><span class="c-rate">×1.1542</span>
+</li>
+<li>
+<svg class="bean" width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><ellipse cx="4" cy="4" rx="3" ry="2" fill="#C97A3D" transform="rotate(-30 4 4)"/><path d="M2.2 4 Q4 2.5 5.8 4" stroke="#1C1512" stroke-width="0.7" fill="none" stroke-linecap="round"/></svg>
+<span class="c-code">GBP</span><span class="c-rate">×1.3499</span>
+</li>
+<li>
+<svg class="bean"  width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><ellipse cx="4" cy="4" rx="3" ry="2" fill="#C97A3D" transform="rotate(-30 4 4)"/><path d="M2.2 4 Q4 2.5 5.8 4" stroke="#1C1512" stroke-width="0.7" fill="none" stroke-linecap="round"/></svg>
+<span class="c-code">INR</span><span class="c-rate">×0.01048</span>
+</li>
+<li>
+<svg class="bean" width="8" height="8" viewBox="0 0 8 8" aria-hidden="true"><ellipse cx="4" cy="4" rx="3" ry="2" fill="#C97A3D" transform="rotate(-30 4 4)"/><path d="M2.2 4 Q4 2.5 5.8 4" stroke="#1C1512" stroke-width="0.7" fill="none" stroke-linecap="round"/></svg>
+<span class="c-code">JPY</span><span class="c-rate">×0.0063</span>
+</li>
+</ul>
+</section>
+
+<div class="rule"></div>
+
+<footer class="footer">no tracking · no api calls · rates Aug 2026</footer>
+
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
