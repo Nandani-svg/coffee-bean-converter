@@ -126,16 +126,16 @@ const match = PRICE_REGEX.exec(placeholder);
 PRICE_REGEX.lastIndex = 0;
 if (!match) return;
 const beans  = toBeans(parseFloat(match[2].replace(/,/g, '')), parseCurrency(match[1]));
-input.setAttribute(INPUT_ATTR, placeholder);
+	input.setAttribute(WRAPPER_ATTR, placeholder);
 input.setAttribute(PROCESSED_ATTR, '1');
 input.placeholder = `${placeholder} ×${beans}`;
 });
 }
 
 function cleanup() {
-document.querySelectorAll(`input[${INPUT_ATTR}]`).forEach(input => {
-input.placeholder = input.getAttribute(INPUT_ATTR);
-input.removeAttribute(INPUT_ATTR);
+	document.querySelectorAll(`input[${WRAPPER_ATTR}]`).forEach(input => {
+		input.placeholder = input.getAttribute(WRAPPER_ATTR);
+		input.removeAttribute(WRAPPER_ATTR);
 input.removeAttribute(PROCESSED_ATTR);
 });
 document.querySelectorAll(`[${BEAN_SPAN_ATTR}]`).forEach(el => el.remove());
@@ -171,10 +171,10 @@ observer.observe(document.body, { childList: true, subtree: true });
 }
 
 chrome.runtime.onMessage.addListener((msg) => {
-if (msg.type === 'BEAN_RATE_TOGGLE')
-enabled = msg.enabled;
-if (enabled) { run(); startObserver(); } else { observer.disconnect(); cleanup(); }
-}
+	if (msg.type === 'BEAN_RATE_TOGGLE') {
+		enabled = msg.enabled;
+		if (enabled) { run(); startObserver(); } else { observer.disconnect(); cleanup(); }
+	}
 if (msg.type === 'BEAN_RATE_THRESHOLDS') {
 thresholds = msg.thresholds;
 }

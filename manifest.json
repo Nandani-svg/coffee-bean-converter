@@ -2,7 +2,7 @@
 "manifest_version": 3,
 "name": "Coffee Bean Rate",
 "version": "1.0.0",
-"description": "Convert price on e commerce page into coffee beans. $1 = beans.",
+"description": "Convert prices on e commerce pages into coffee beans. $1 = 1 bean.",
 "action": {
     "default_popup": "popup.html"
 },
