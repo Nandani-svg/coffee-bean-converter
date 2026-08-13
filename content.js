@@ -32,7 +32,7 @@ return SYMBOL_TO_CURRENCY[raw.trim()] || 'USD';
 }
 
 function toBeans(amount, currency) {
-return Math.ceil(amount * (RATES_TO_USD[currency] ?? 1));
+return Math.ceil(amount * (RATE_TO_USD[currency] ?? 1));
 }
 
 function makeBeanSpan(beans) {
@@ -56,7 +56,7 @@ let match;
 
 while ((match = PRICE_REGEX.exec(text)) !== null) {
 const [full, symbolRaw, numStr] = match;
-if (match.index > lastIndex) frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+if (match.index > lastIndex) fraq.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
 fraq.appendChild(document.createTextNode(full));
 fraq.appendChild(makeBeanSpan(toBeans(parseFloat(numStr.replace(/,/g, '')), parseCurrency(symbolRaw))));
 lastIndex = match.index + full.length;
@@ -72,7 +72,7 @@ textNode.parentNode.replaceChild(wrapper, textNode);
 
 function processTextNodes(node) {
 if (node.nodeType === Node.TEXT_NODE) {
-if (node.parentElement?.closest(`[$PROCESSED_ATTR]`)) return;
+if (node.parentElement?.closest(`[${PROCESSED_ATTR}]`)) return;
 injectBeans(node);
 return;
 }
@@ -86,7 +86,7 @@ function processElementPrices(root) {
 const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT, {
 acceptNode(el) {
 if (SKIP_TAGS.has(el.tagName)) return NodeFilter.FILTER_REJECT;
-IF (el.hasAttribute(PROCESSED_ATTR)) return NodeFilter.FILTER_REJECT;
+if (el.hasAttribute(PROCESSED_ATTR)) return NodeFilter.FILTER_REJECT;
 return NodeFilter.FILTER_ACCEPT;
 },
 });

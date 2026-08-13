@@ -20,7 +20,7 @@ width: 272px;
 -moz-osx-font-smoothing: grayscale;
 }
 
-.panel { display: flex-direction: column; }
+.panel { display: flex; flex-direction: column; }
 
 
 .header {
@@ -119,7 +119,7 @@ position: relative;
 transition: background 0.18s;
 }
 
-.thump {
+.thumb {
 position: absolute;
 top: 3px;
 left: 3px;
@@ -131,7 +131,7 @@ transition: transform 0.18s, background 0.18s;
 }
 
 .toggle input:checked + .track { background: var(--accent); }
-.toggle input:checked + .track .thump { transform: translateX(15px); background: var(--bg); }
+.toggle input:checked + .track .thumb { transform: translateX(15px); background: var(--bg); }
 
 
 .currency-list {
