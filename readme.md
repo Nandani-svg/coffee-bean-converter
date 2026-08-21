@@ -1,25 +1,20 @@
-# Bean Rate
+# Coffee Bean Rate
 
-Converts prices on any page into coffee beans.  $1 = 1 bean.
+## What it does
 
-So ₹7,199 becomes 76 coffee beans. You start thinking in beans.
+Coffee Bean converter convert prices on shopping pages into coffee beans: `$1 = 1 bean`. It supports USD, EUR, GBP, INR, and JPY, with color coding to make expensive red so you will think twice before buying.
 
----
+## Install
 
-**Install**
+1. Clone or download this folder.
+2. Open `chrome://extensions` in Chrome and enable **Developer mode**.
+3. Select **Load unpacked** and choose this project folder.
+4. Visit a shopping page such as Amazon or Flipkart then turn on the extension andd now currencys are beans
 
-1. Download / clone this repo
-2. Go to `chrome://extensions`, turn on Developer mode
-3. Load unpacked → pick the folder
+## Tech behind this
 
----
+Built with plain HTML, CSS, and JavaScript as a Chrome Manifest V3 extension. It uses content scripts to update page prices and Chrome storage for the per site toggle. There are no external packages, API calls, or tracking.(this extension prices are locked for august 2026)
 
-**Works on**  Amazon, Flipkart, any site with prices in $, €, £, ₹, or ¥.
+## Why bean converter?
 
-Color coding: green is fine, yellow is ok, red means u need to code alot/think twice.
-
-You can change those thresholds from the popup.
-
----
-
-No tracking. No API calls. Rates are hardcoded (Aug 2026).
+I was searching for ideas and then i thought why not make a extension which people of #3am can use see how much more bean work they need to do exactly
